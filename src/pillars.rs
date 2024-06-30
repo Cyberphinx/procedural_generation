@@ -5,7 +5,7 @@ use bevy::prelude::*;
 use bevy_ghx_proc_gen::{
     bevy_ghx_grid::{
         debug_plugin::{view::DebugGridView, DebugGridView3dBundle},
-        ghx_grid::{coordinate_system::Cartesian3D, grid::GridDefinition},
+        ghx_grid::grid::GridDefinition,
     },
     gen::{
         assets::{AssetSpawner, RulesModelsAssets},
@@ -15,7 +15,6 @@ use bevy_ghx_proc_gen::{
     GeneratorBundle,
 };
 use bevy_ghx_utils::camera::PanOrbitCamera;
-// use bevy_ghx_utils::camera::{update_pan_orbit_camera, PanOrbitCamera};
 
 use crate::{rules::rules_and_assets, utils::load_assets};
 

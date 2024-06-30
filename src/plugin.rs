@@ -85,7 +85,7 @@ impl<C: CoordinateSystem, A: AssetsBundleSpawner, T: ComponentSpawner> Plugin
 {
     fn build(&self, app: &mut App) {
         app.add_plugins((
-            FrameTimeDiagnosticsPlugin::default(),
+            FrameTimeDiagnosticsPlugin,
             FpsDisplayPlugin,
             GridDebugPlugin::<C>::new(),
             DefaultPickingPlugins,

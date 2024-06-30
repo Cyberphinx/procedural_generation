@@ -53,15 +53,16 @@ impl<T> AssetDef<T> {
     }
 }
 
-pub fn load_assets<A: Asset, T: ComponentSpawner>(
+pub fn load_assets<A, T>(
     asset_server: &Res<AssetServer>,
     assets_definitions: Vec<Vec<AssetDef<T>>>,
     assets_directory: &str,
     extension: &str,
 ) -> RulesModelsAssets<Handle<A>, T>
 where
+    A: Asset,
     Handle<A>: AssetsBundleSpawner,
-    T: Clone,
+    T: ComponentSpawner + Clone,
 {
     let mut models_assets = RulesModelsAssets::new();
     for (model_index, assets) in assets_definitions.iter().enumerate() {
